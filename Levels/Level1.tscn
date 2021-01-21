@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Environments/Tiles.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Environments/Interactable/Door.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Environments/Backgrounds/tree.png" type="Texture" id=4]
+[ext_resource path="res://Environments/Backgrounds/grass.png" type="Texture" id=5]
+[ext_resource path="res://Environments/Backgrounds/crooked_tree.png" type="Texture" id=6]
+[ext_resource path="res://Environments/Backgrounds/small_tree.png" type="Texture" id=7]
+[ext_resource path="res://Environments/Interactable/BarbedWire.tscn" type="PackedScene" id=8]
+
+[node name="Node" type="Node"]
+
+[node name="Tiles" parent="." instance=ExtResource( 2 )]
+
+[node name="Earth" parent="Tiles" index="1"]
+tile_data = PoolIntArray( 2293760, 0, 0, 2293761, 0, 0, 2293762, 0, 0, 2293763, 0, 0, 2293764, 0, 0, 2293765, 0, 0, 2293766, 0, 0, 2293767, 0, 0, 2293768, 0, 0, 2293769, 0, 0, 2293770, 0, 0, 2293771, 0, 0, 2293772, 0, 0, 2293773, 0, 0, 2293774, 0, 0, 2293775, 0, 0, 2293776, 0, 0, 2293777, 0, 0, 2293778, 0, 0, 2293779, 0, 0, 2293780, 0, 0, 2293781, 0, 0 )
+
+[node name="BackgroundSprites" type="Node" parent="."]
+
+[node name="crooked_tree" type="Sprite" parent="BackgroundSprites"]
+position = Vector2( 57.8682, 550.039 )
+texture = ExtResource( 6 )
+
+[node name="tree2" type="Sprite" parent="BackgroundSprites"]
+position = Vector2( 146.162, 530.915 )
+texture = ExtResource( 4 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 22.2655, 551.431 )
+
+[node name="Door" parent="." instance=ExtResource( 3 )]
+position = Vector2( 312.012, 550.039 )
+destination = "res://Levels/Arena.tscn"
+
+[node name="ForegroundSprites" type="Node" parent="."]
+
+[node name="tree" type="Sprite" parent="ForegroundSprites"]
+position = Vector2( 179.588, 530.284 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 4 )
+
+[node name="grass" type="Sprite" parent="ForegroundSprites"]
+position = Vector2( 77.8395, 560.039 )
+texture = ExtResource( 5 )
+
+[node name="grass" type="Sprite" parent="ForegroundSprites/grass"]
+position = Vector2( 17.869, -0.533936 )
+texture = ExtResource( 5 )
+
+[node name="grass2" type="Sprite" parent="ForegroundSprites/grass"]
+position = Vector2( -17.4486, 0.0967407 )
+texture = ExtResource( 5 )
+
+[node name="grass2" type="Sprite" parent="ForegroundSprites"]
+position = Vector2( 164.452, 560.039 )
+texture = ExtResource( 5 )
+
+[node name="grass" type="Sprite" parent="ForegroundSprites/grass2"]
+position = Vector2( 17.869, -0.533936 )
+texture = ExtResource( 5 )
+
+[node name="grass2" type="Sprite" parent="ForegroundSprites/grass2"]
+position = Vector2( -17.4486, 0.0967407 )
+texture = ExtResource( 5 )
+
+[node name="small_tree" type="Sprite" parent="ForegroundSprites"]
+position = Vector2( 271.035, 553.449 )
+texture = ExtResource( 7 )
+
+[node name="BarbedWire" parent="." instance=ExtResource( 8 )]
+position = Vector2( 235, 553.449 )
+
+[editable path="Tiles"]
