@@ -10,3 +10,6 @@ func _physics_process(delta):
 		for body in get_overlapping_bodies():
 			if "hp" in body:
 				body.hp -= 1
+			if "slowdown" in body:
+				body.slowdown = true
+

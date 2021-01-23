@@ -18,6 +18,8 @@ var can_climb : bool = false
 var dead : bool = false
 var ammo = Globals.RIFLE_MAX_AMMO
 var hp = Globals.PLAYER_MAX_HP
+var player_speed = Globals.MAX_SPEED
+var slowdown = false
 var active_door = null
 
 # load vectors
@@ -119,6 +121,9 @@ func _physics_process(delta):
 
 	# apply velocity to player
 	velocity = move_and_slide(velocity, Globals.UP)
+	
+	# clear slowdown effect:
+	slowdown = false
 
 	# debug labels
 
@@ -154,6 +159,11 @@ func get_action_inputs(delta):
 	# force reload state on input
 	if force_reload:
 		ammo = 0
+	
+	# check for slowdown effect
+	if slowdown:
+		velocity.x = velocity.x / 4.5
+		velocity.y = velocity.y / 4.5
 	
 	# check for contextual states
 	reload = (ammo <= 0)
@@ -248,12 +258,12 @@ func movement_state(vector):
 		# increase horizontal velocity by acceleration factor
 		velocity.x += vector.x * Globals.ACCELERATION
 		# limit to max speed
-		velocity.x = clamp(velocity.x, -Globals.MAX_SPEED, Globals.MAX_SPEED)
+		velocity.x = clamp(velocity.x, -player_speed, player_speed)
 	else:
 		# use lower acceleration if airborne
 		velocity.x += vector.x * air_acceleration
 		# limit to max speed
-		velocity.x = clamp(velocity.x, -Globals.MAX_SPEED, Globals.MAX_SPEED)
+		velocity.x = clamp(velocity.x, -player_speed, player_speed)
 
 	return velocity.floor()
 
@@ -299,9 +309,9 @@ func roll_state(vector):
 	# roll from idle
 	if vector.x == 0:
 		if last_vector.x > 0:
-			vector.x = float(Globals.MAX_SPEED) / 2
+			vector.x = float(player_speed) / 2
 		if last_vector.x < 0:
-			vector.x = -(float(Globals.MAX_SPEED) / 2)
+			vector.x = -(float(player_speed) / 2)
 
 	# roll from movement
 	else:
@@ -312,9 +322,9 @@ func roll_state(vector):
 		# slightly increase speed for duration of roll
 		if vector.x != 0:
 			if last_vector.x > 0:
-				vector.x = Globals.MAX_SPEED * 1.5
+				vector.x = player_speed * 1.5
 			if last_vector.x < 0:
-				vector.x = -(Globals.MAX_SPEED * 1.5)
+				vector.x = -(player_speed * 1.5)
 		
 	
 	return vector
