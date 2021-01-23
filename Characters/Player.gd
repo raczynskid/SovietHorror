@@ -44,6 +44,7 @@ onready var health_bar = get_node("UI/Interface/Bar/HP")
 
 # load misc nodes
 onready var beam = get_node("RifleBeam")
+onready var standing_collision_box = get_node("StandingMovementCollision")
 
 func _ready():
 	animationTree.active = true
@@ -289,6 +290,12 @@ func roll_state(vector):
 	# disable shooting for time of roll
 	can_shoot = false
 
+	# disable standing movement collision
+	# box for the duration of roll
+	# to enable rolling under obstacles
+
+	standing_collision_box.disabled = true
+
 	# roll from idle
 	if vector.x == 0:
 		if last_vector.x > 0:
@@ -325,6 +332,9 @@ func end_roll():
 
 	# reenable shooting
 	can_shoot = true
+	
+	# reenable standing collision
+	standing_collision_box.disabled = false
 
 func slide_state(vector):
 	# vector : velocity
@@ -333,6 +343,11 @@ func slide_state(vector):
 
 	# set state
 	current_state = "slide"
+
+	# disable standing collision
+	# to allow sliding under obstacles
+
+	standing_collision_box.disabled = true
 
 	# set animation blend
 	animationTree.set("parameters/Slide/blend_position", vector.x)
@@ -347,7 +362,8 @@ func slide_state(vector):
 	return vector
 
 func end_slide():
-	pass
+	# reenable standing collisions
+	standing_collision_box.disabled = false
 
 func shed_speed(vector):
 	# vector : velocity

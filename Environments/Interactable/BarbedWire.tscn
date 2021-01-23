@@ -19,4 +19,6 @@ texture = ExtResource( 1 )
 position = Vector2( 0, 3.44326 )
 shape = SubResource( 1 )
 
+[node name="Node" type="Node" parent="."]
+
 [editable path="Dmg"]
