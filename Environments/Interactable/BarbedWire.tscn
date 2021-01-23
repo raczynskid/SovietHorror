@@ -17,6 +17,7 @@ texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dmg/DamageArea" index="0"]
 position = Vector2( 0, 3.44326 )
+scale = Vector2( 0.628, 1 )
 shape = SubResource( 1 )
 
 [editable path="Dmg"]

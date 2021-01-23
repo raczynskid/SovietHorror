@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Environments/Tiles.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Environments/Backgrounds/Forest1.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/Backgrounds/flat_buildings_background.png" type="Texture" id=10]
 [ext_resource path="res://Environments/RollUnder.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Characters/DummyTarget.tscn" type="PackedScene" id=12]
 
 [node name="Node" type="Node"]
 
@@ -151,5 +152,10 @@ position = Vector2( 420.975, 553.449 )
 
 [node name="BarbedWire3" parent="Interactables" instance=ExtResource( 8 )]
 position = Vector2( 489.01, 553.449 )
+
+[node name="DummyTarget" parent="." instance=ExtResource( 12 )]
+position = Vector2( 782.292, 555.773 )
+rotation = -3.14159
+scale = Vector2( -1, -1 )
 
 [editable path="Tiles"]
