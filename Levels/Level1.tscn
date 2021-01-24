@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Environments/Tiles.tscn" type="PackedScene" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://Sprites/Backgrounds/flat_buildings_background.png" type="Texture" id=10]
 [ext_resource path="res://Environments/RollUnder.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Characters/DummyTarget.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Sprites/Backgrounds/command_bunker.png" type="Texture" id=13]
+[ext_resource path="res://Environments/Interactable/Fence.tscn" type="PackedScene" id=14]
 
 [node name="Node" type="Node"]
 
@@ -21,7 +23,7 @@
 tile_data = PoolIntArray( 2162724, 0, 262146, 2228260, 0, 458753 )
 
 [node name="Earth" parent="Tiles" index="1"]
-tile_data = PoolIntArray( 2293760, 0, 0, 2293761, 0, 0, 2293762, 0, 0, 2293763, 0, 0, 2293764, 0, 0, 2293765, 0, 0, 2293766, 0, 0, 2293767, 0, 0, 2293768, 0, 0, 2293769, 0, 0, 2293770, 0, 0, 2293771, 0, 0, 2293772, 0, 0, 2293773, 1, 0, 2293774, 1, 0, 2293775, 1, 0, 2293776, 0, 0, 2293777, 0, 0, 2293778, 0, 0, 2293779, 0, 0, 2293780, 0, 0, 2293781, 0, 0, 2293782, 1, 0, 2293783, 1, 0, 2293784, 1, 0, 2293785, 1, 0, 2293786, 1, 0, 2293787, 1, 0, 2293788, 1, 0, 2293789, 1, 0, 2293790, 0, 0, 2293791, 0, 0, 2293792, 0, 0, 2293793, 0, 0, 2293794, 0, 0, 2293795, 0, 0, 2293796, 0, 0, 2293797, 0, 0, 2293798, 0, 0, 2293799, 0, 0, 2293800, 0, 0, 2293801, 0, 0, 2293802, 0, 0, 2293803, 0, 0, 2293804, 0, 0, 2293805, 0, 0, 2293806, 0, 0, 2293807, 0, 0, 2293808, 0, 0, 2293809, 0, 0, 2293810, 0, 0, 2293811, 0, 0, 2293812, 0, 0, 2293813, 0, 0, 2293814, 0, 0, 2293815, 0, 0 )
+tile_data = PoolIntArray( 2293760, 0, 0, 2293761, 0, 0, 2293762, 0, 0, 2293763, 0, 0, 2293764, 0, 0, 2293765, 0, 0, 2293766, 0, 0, 2293767, 0, 0, 2293768, 0, 0, 2293769, 0, 0, 2293770, 0, 0, 2293771, 0, 0, 2293772, 0, 0, 2293773, 1, 0, 2293774, 1, 0, 2293775, 1, 0, 2293776, 0, 0, 2293777, 0, 0, 2293778, 0, 0, 2293779, 0, 0, 2293780, 0, 0, 2293781, 0, 0, 2293782, 1, 0, 2293783, 1, 0, 2293784, 1, 0, 2293785, 1, 0, 2293786, 1, 0, 2293787, 1, 0, 2293788, 1, 0, 2293789, 1, 0, 2293790, 0, 0, 2293791, 0, 0, 2293792, 0, 0, 2293793, 0, 0, 2293794, 0, 0, 2293795, 0, 0, 2293796, 0, 0, 2293797, 0, 0, 2293798, 0, 0, 2293799, 0, 0, 2293800, 0, 0, 2293801, 0, 0, 2293802, 0, 0, 2293803, 0, 0, 2293804, 0, 0, 2293805, 0, 0, 2293806, 1, 0, 2293807, 1, 0, 2293808, 1, 0, 2293809, 1, 0, 2293810, 1, 0, 2293811, 1, 0, 2293812, 1, 0, 2293813, 1, 0, 2293814, 1, 0, 2293815, 1, 0, 2293816, 1, 0, 2293817, 1, 0, 2293818, 1, 0, 2293819, 1, 0, 2293820, 1, 0, 2293821, 1, 0, 2293822, 1, 0, 2293823, 1, 0, 2293824, 1, 0, 2293825, 1, 0, 2293826, 1, 0 )
 
 [node name="BackgroundSprites" type="Node" parent="."]
 
@@ -37,12 +39,22 @@ texture = ExtResource( 6 )
 position = Vector2( 146.162, 530.915 )
 texture = ExtResource( 4 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 22.2655, 551.431 )
+[node name="command_bunker" type="Sprite" parent="."]
+position = Vector2( 900.282, 511.128 )
+texture = ExtResource( 13 )
 
 [node name="Door" parent="." instance=ExtResource( 3 )]
-position = Vector2( 830.469, 550.817 )
-destination = "res://Levels/Arena.tscn"
+position = Vector2( 795.833, 550.817 )
+destination = "res://Levels/Level1-2.tscn"
+
+[node name="Fence" parent="." instance=ExtResource( 14 )]
+position = Vector2( 878.207, 531.242 )
+
+[node name="Fence2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 949.541, 531.032 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -2.90241, 550.986 )
 
 [node name="ForegroundSprites" type="Node" parent="."]
 
@@ -154,7 +166,7 @@ position = Vector2( 420.975, 553.449 )
 position = Vector2( 489.01, 553.449 )
 
 [node name="DummyTarget" parent="." instance=ExtResource( 12 )]
-position = Vector2( 782.292, 555.773 )
+position = Vector2( 672.043, 554.882 )
 rotation = -3.14159
 scale = Vector2( -1, -1 )
 
