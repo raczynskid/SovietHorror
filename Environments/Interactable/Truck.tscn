@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Environments/Interactable/Truck.png" type="Texture" id=2]
+[ext_resource path="res://Environments/FloorTile.tscn" type="PackedScene" id=3]
+
+[node name="Truck" type="Node2D"]
+position = Vector2( 0.44545, 4.12041 )
+
+[node name="FloorTile" parent="." instance=ExtResource( 3 )]
+position = Vector2( -4.39592, 7.44084 )
+
+[node name="FloorTile2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 15.4266, 7.44084 )
+
+[node name="FloorTile3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 30.1264, 7.66357 )
+
+[node name="FloorTile4" parent="." instance=ExtResource( 3 )]
+position = Vector2( -23.8843, -8.14989 )
+
+[node name="FloorTile5" parent="." instance=ExtResource( 3 )]
+position = Vector2( -23.9957, -27.1928 )
+
+[node name="FloorTile6" parent="." instance=ExtResource( 3 )]
+position = Vector2( -23.9957, -46.6813 )
+
+[node name="FloorTile7" parent="." instance=ExtResource( 3 )]
+position = Vector2( -23.8843, -66.6151 )
+
+[node name="FloorTile8" parent="." instance=ExtResource( 3 )]
+position = Vector2( -23.9957, -86.4376 )
+
+[node name="FloorTile9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 30.2378, 26.8179 )
+
+[node name="FloorTile10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 30.1264, 45.7495 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Environments/Tiles.tscn" type="PackedScene" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://Characters/DummyTarget.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Sprites/Backgrounds/command_bunker.png" type="Texture" id=13]
 [ext_resource path="res://Environments/Interactable/Fence.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Environments/Interactable/Truck.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Environments/Interactable/Truck_alpha.png" type="Texture" id=16]
 
 [node name="Node" type="Node"]
 
@@ -23,7 +25,7 @@
 tile_data = PoolIntArray( 2162724, 0, 262146, 2228260, 0, 458753 )
 
 [node name="Earth" parent="Tiles" index="1"]
-tile_data = PoolIntArray( 2293760, 0, 0, 2293761, 0, 0, 2293762, 0, 0, 2293763, 0, 0, 2293764, 0, 0, 2293765, 0, 0, 2293766, 0, 0, 2293767, 0, 0, 2293768, 0, 0, 2293769, 0, 0, 2293770, 0, 0, 2293771, 0, 0, 2293772, 0, 0, 2293773, 1, 0, 2293774, 1, 0, 2293775, 1, 0, 2293776, 0, 0, 2293777, 0, 0, 2293778, 0, 0, 2293779, 0, 0, 2293780, 0, 0, 2293781, 0, 0, 2293782, 1, 0, 2293783, 1, 0, 2293784, 1, 0, 2293785, 1, 0, 2293786, 1, 0, 2293787, 1, 0, 2293788, 1, 0, 2293789, 1, 0, 2293790, 0, 0, 2293791, 0, 0, 2293792, 0, 0, 2293793, 0, 0, 2293794, 0, 0, 2293795, 0, 0, 2293796, 0, 0, 2293797, 0, 0, 2293798, 0, 0, 2293799, 0, 0, 2293800, 0, 0, 2293801, 0, 0, 2293802, 0, 0, 2293803, 0, 0, 2293804, 0, 0, 2293805, 0, 0, 2293806, 1, 0, 2293807, 1, 0, 2293808, 1, 0, 2293809, 1, 0, 2293810, 1, 0, 2293811, 1, 0, 2293812, 1, 0, 2293813, 1, 0, 2293814, 1, 0, 2293815, 1, 0, 2293816, 1, 0, 2293817, 1, 0, 2293818, 1, 0, 2293819, 1, 0, 2293820, 1, 0, 2293821, 1, 0, 2293822, 1, 0, 2293823, 1, 0, 2293824, 1, 0, 2293825, 1, 0, 2293826, 1, 0 )
+tile_data = PoolIntArray( 2359279, 0, 0, 2359280, 0, 0, 2359281, 0, 0, 2359282, 0, 0, 2359283, 0, 0, 2359284, 0, 0, 2359285, 0, 0, 2359286, 0, 0, 2359287, 0, 0, 2359288, 0, 0, 2359289, 0, 0, 2359290, 0, 0, 2359291, 0, 0, 2359292, 0, 0, 2359293, 0, 0, 2359294, 0, 0, 2359295, 0, 0, 2293760, 0, 0, 2293761, 0, 0, 2293762, 0, 0, 2293763, 0, 0, 2293764, 0, 0, 2293765, 0, 0, 2293766, 0, 0, 2293767, 0, 0, 2293768, 0, 0, 2293769, 0, 0, 2293770, 0, 0, 2293771, 0, 0, 2293772, 0, 0, 2293773, 1, 0, 2293774, 1, 0, 2293775, 1, 0, 2293776, 0, 0, 2293777, 0, 0, 2293778, 0, 0, 2293779, 0, 0, 2293780, 0, 0, 2293781, 0, 0, 2293782, 1, 0, 2293783, 1, 0, 2293784, 1, 0, 2293785, 1, 0, 2293786, 1, 0, 2293787, 1, 0, 2293788, 1, 0, 2293789, 1, 0, 2293790, 0, 0, 2293791, 0, 0, 2293792, 0, 0, 2293793, 0, 0, 2293794, 0, 0, 2293795, 0, 0, 2293796, 0, 0, 2293797, 0, 0, 2293798, 0, 0, 2293799, 0, 0, 2293800, 0, 0, 2293801, 0, 0, 2293802, 0, 0, 2293803, 0, 0, 2293804, 0, 0, 2293805, 0, 0, 2293806, 1, 0, 2293807, 1, 0, 2293808, 1, 0, 2293809, 1, 0, 2293810, 1, 0, 2293811, 1, 0, 2293812, 1, 0, 2293813, 1, 0, 2293814, 1, 0, 2293815, 1, 0, 2293816, 1, 0, 2293817, 1, 0, 2293818, 1, 0, 2293819, 1, 0, 2293820, 1, 0, 2293821, 1, 0, 2293822, 1, 0, 2293823, 1, 0, 2293824, 1, 0, 2293825, 1, 0, 2293826, 1, 0 )
 
 [node name="BackgroundSprites" type="Node" parent="."]
 
@@ -53,8 +55,11 @@ position = Vector2( 878.207, 531.242 )
 [node name="Fence2" parent="." instance=ExtResource( 14 )]
 position = Vector2( 949.541, 531.032 )
 
+[node name="Truck" parent="." instance=ExtResource( 15 )]
+position = Vector2( -68.4248, 539.577 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -2.90241, 550.986 )
+position = Vector2( -65.9736, 520.451 )
 
 [node name="ForegroundSprites" type="Node" parent="."]
 
@@ -102,6 +107,22 @@ texture = ExtResource( 5 )
 position = Vector2( -17.4486, 0.0967407 )
 texture = ExtResource( 5 )
 
+[node name="grass3" type="Sprite" parent="ForegroundSprites/grass3"]
+position = Vector2( -607.022, 0.938599 )
+texture = ExtResource( 5 )
+
+[node name="grass4" type="Sprite" parent="ForegroundSprites/grass3"]
+position = Vector2( -591.027, 1.21918 )
+texture = ExtResource( 5 )
+
+[node name="grass5" type="Sprite" parent="ForegroundSprites/grass3"]
+position = Vector2( -658.374, 1.49976 )
+texture = ExtResource( 5 )
+
+[node name="grass6" type="Sprite" parent="ForegroundSprites/grass3"]
+position = Vector2( -675.772, 2.06097 )
+texture = ExtResource( 5 )
+
 [node name="grass2" type="Sprite" parent="ForegroundSprites"]
 position = Vector2( 164.452, 560.039 )
 texture = ExtResource( 5 )
@@ -134,6 +155,10 @@ motion_scale = Vector2( 0.1, 1 )
 position = Vector2( 214.183, 490.061 )
 texture = ExtResource( 10 )
 
+[node name="flat_buildings_background2" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+position = Vector2( -409.817, 490.061 )
+texture = ExtResource( 10 )
+
 [node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
 motion_scale = Vector2( 0.2, 1 )
 
@@ -142,6 +167,11 @@ color = Color( 0.545098, 0.545098, 0.545098, 1 )
 
 [node name="Forest1" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
 position = Vector2( 138.094, 511.266 )
+scale = Vector2( 1.13509, 1.13509 )
+texture = ExtResource( 9 )
+
+[node name="Forest3" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 3.787, 511.266 )
 scale = Vector2( 1.13509, 1.13509 )
 texture = ExtResource( 9 )
 
@@ -169,5 +199,9 @@ position = Vector2( 489.01, 553.449 )
 position = Vector2( 672.043, 554.882 )
 rotation = -3.14159
 scale = Vector2( -1, -1 )
+
+[node name="Truck_alpha" type="Sprite" parent="."]
+position = Vector2( -68.6603, 539.964 )
+texture = ExtResource( 16 )
 
 [editable path="Tiles"]
